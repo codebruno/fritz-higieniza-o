@@ -1,0 +1,106 @@
+:root {
+    /* Cores principais */
+    --primary-blue: #007bff;          /* Azul (cor predominante) */
+    --ice-white: #f8f9fa;             /* Cor gelo (fundo leve) */
+    --matte-gray: #6c757d;            /* Cinza fosco (para textos ou detalhes) */
+    --whatsapp-green: #25d366;        /* Verde (para links do WhatsApp) */
+    
+    /* Cores para textos */
+    --title-color: #343a40;           /* Cor para títulos (preto suave) */
+    --paragraph-color: #495057;       /* Cor para parágrafos (cinza escuro) */
+    --link-color: #007bff;            /* Cor padrão dos links */
+    
+    /* Cores para botões */
+    --button-bg: #007bff;             /* Fundo do botão (azul) */
+    --button-text-color: #ffffff;     /* Cor do texto do botão */
+    --button-hover-bg: #0056b3;       /* Fundo do botão no hover (azul mais escuro) */
+    
+    /* Bordas e sombras */
+    --border-color: #dee2e6;          /* Cor para bordas sutis */
+    --box-shadow: rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+*{
+    font-size: 1rem; /* Mantém 14px como base */
+    list-style-type: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 87.5%; /* Isso faz com que 1rem seja igual a 14px (87.5% de 16px padrão) */
+}
+
+body{
+    padding-top: 80px;
+}
+
+/* Configuração do cabeçalho fixo */
+header {
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.884); /* Sombra sutil */
+    z-index: 1000;
+}
+
+/********************* Logo *********************/
+.logo {
+    max-width: 150px; /* Ajuste da largura da logo */
+    height: auto;
+}
+
+/*********************Links de navegação *********************/
+.nav-link {
+    color: #495057;
+    font-size: 1rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+/* Ajuste do botão no mobile */
+.navbar-toggler {
+    border: none;
+}
+
+/* Espaçamento do conteúdo abaixo do cabeçalho */
+.content {
+    padding: 100px 0;
+}
+
+/********************* Seção Home *********************/
+
+#home h2,
+section h2 {
+    font-size: 2.5rem; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+#home p,
+section p {
+    font-size: 1rem; /* Tamanho do parágrafo */
+    margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
+}
+
+#home p span{
+    font-weight: bold;
+}
+
+#banner {
+    font-family: 'Open Sans', sans-serif; /* Usando uma fonte mais moderna */
+    background: #007bff; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 50px 0; /* Espaçamento vertical */
+    position: relative; /* Para poder aplicar efeitos adicionais se necessário */
+}
+
+/* Sombras para o texto */
+.floating-element {
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translatey(0); }
+    50% { transform: translatey(-20px); }
+    100% { transform: translatey(0); }
+}
