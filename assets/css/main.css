@@ -1,26 +1,9 @@
-:root {
-    /* Cores principais */
-    --primary-blue: #007bff;          /* Azul (cor predominante) */
-    --ice-white: #f8f9fa;             /* Cor gelo (fundo leve) */
-    --matte-gray: #6c757d;            /* Cinza fosco (para textos ou detalhes) */
-    --whatsapp-green: #25d366;        /* Verde (para links do WhatsApp) */
-    
-    /* Cores para textos */
-    --title-color: #343a40;           /* Cor para títulos (preto suave) */
-    --paragraph-color: #495057;       /* Cor para parágrafos (cinza escuro) */
-    --link-color: #007bff;            /* Cor padrão dos links */
-    
-    /* Cores para botões */
-    --button-bg: #007bff;             /* Fundo do botão (azul) */
-    --button-text-color: #ffffff;     /* Cor do texto do botão */
-    --button-hover-bg: #0056b3;       /* Fundo do botão no hover (azul mais escuro) */
-    
-    /* Bordas e sombras */
-    --border-color: #dee2e6;          /* Cor para bordas sutis */
-    --box-shadow: rgba(0, 0, 0, 0.1); /* Sombra suave */
+:root{
+    --primary-blue: #0e2947;
 }
 
-*{
+/* Reset básico */
+* {
     font-size: 1rem; /* Mantém 14px como base */
     list-style-type: none;
     border: none;
@@ -28,79 +11,93 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 87.5%; /* Isso faz com que 1rem seja igual a 14px (87.5% de 16px padrão) */
+/* Compensação do scroll para a altura do cabeçalho */
+section {
+    scroll-margin-top: 80px; /* Ajuste este valor conforme a altura do cabeçalho */
 }
 
-body{
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 60px; /* Ajuste menor para dispositivos móveis */
+    }
+}
+
+/* Estilos globais */
+body {
+    font-family: 'Roboto', sans-serif;
     padding-top: 80px;
 }
 
-/* Configuração do cabeçalho fixo */
-header {
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.884); /* Sombra sutil */
-    z-index: 1000;
+.navbar{
+    background: #0e2947;
 }
 
-/********************* Logo *********************/
-.logo {
-    max-width: 150px; /* Ajuste da largura da logo */
-    height: auto;
+.nav-item .btn-custom{
+    background: #A4B8D1;
 }
 
-/*********************Links de navegação *********************/
-.nav-link {
-    color: #495057;
-    font-size: 1rem;
-    margin: 0 10px;
-    transition: color 0.3s;
+/* Efeito hover */
+.nav-item .btn-custom:hover {
+    background-color: #91bbee; /* Cor personalizada para hover */
 }
 
-/* Ajuste do botão no mobile */
-.navbar-toggler {
-    border: none;
-}
-
-/* Espaçamento do conteúdo abaixo do cabeçalho */
-.content {
-    padding: 100px 0;
-}
-
-/********************* Seção Home *********************/
-
-#home h2,
-section h2 {
-    font-size: 2.5rem; /* Tamanho do título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
-}
-
-#home p,
-section p {
-    font-size: 1rem; /* Tamanho do parágrafo */
-    margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
-}
-
-#home p span{
+.nav-item a {
+    color: #0e2947;
     font-weight: bold;
 }
 
-#banner {
-    font-family: 'Open Sans', sans-serif; /* Usando uma fonte mais moderna */
-    background: #007bff; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    padding: 50px 0; /* Espaçamento vertical */
-    position: relative; /* Para poder aplicar efeitos adicionais se necessário */
+.nav-link {
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
-/* Sombras para o texto */
-.floating-element {
-    animation: float 6s infinite ease-in-out;
+.lead span{
+    font-weight: bold;
 }
 
-@keyframes float {
-    0% { transform: translatey(0); }
-    50% { transform: translatey(-20px); }
-    100% { transform: translatey(0); }
+.mt-4 .btn {
+    font-weight: bold;
+}
+
+#bg-video {
+    filter: brightness(50%);
+}
+section#banner {
+    background-attachment: fixed;
+}
+
+/* Estilos para o vídeo de fundo */
+.banner-section {
+    position: relative;
+    height: 100vh; /* Altura completa da tela */
+    color: white;
+    overflow: hidden;
+}
+
+.banner-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.815); /* Overlay para melhorar a legibilidade */
+    z-index: 1;
+}
+
+.banner-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    object-fit: cover;
+}
+
+.banner-section .content {
+    position: relative;
+    z-index: 2; /* Conteúdo acima do vídeo */
 }
